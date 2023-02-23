@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krypton.com</title>
+  <style>
+    .chart {
+      position: absolute;
+      left: 2%;
+    }
+
+    #ot {
+      position: absolute;
+      color: goldenrod;
+      left: 110%;
+      font-size: 35px;
+      top: 10%;
+    }
+
+    #Status {
+      position: absolute;
+      color: goldenrod;
+      left: 150%;
+      top: 10%;
+      font-size: 35px;
+
+    }
+
+    #pl {
+      position: absolute;
+      left: 180%;
+      font-size: 35px;
+      top: 10%;
+      color: goldenrod;
+    }
+
+    #exit {
+      position: absolute;
+      right: -80%;
+      top: 80%;
+      font-size: 30px;
+      padding-left: 200px;
+      padding-right: 200px;
+
+    }
+
+    #Back {
+      position: absolute;
+      right: -80%;
+      top: 90%;
+      font-size: 30px;
+      padding-left: 195px;
+      padding-right: 195px;
+    }
+
+    #txt {
+      position: absolute;
+      left: 116%;
+      top: 20%;
+      color: red;
+      font-size: 35px;
+    }
+
+    #st {
+      position: absolute;
+      left: 145%;
+      top: 20%;
+      color: violet;
+      font-size: 35px;
+    }
+
+    #l {
+      position: absolute;
+      left: 180%;
+      font-size: 35px;
+      color: aqua;
+      top: 20%;
+
+    }
+  </style>
+
+</head>
+
+<body style="background-color:#1b212c ;">
+  <header class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+          viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">KRYPTON</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a href="index.html" class="mr-5 hover:text-white">HOME</a>
+        <a href="about.html" class="mr-5 hover:text-white">ABOUT US</a>
+        <a href="features.html" class="mr-5 hover:text-white">FEATURES</a>
+        <a href="contact.html" class="mr-5 hover:text-white">CONTACT US</a>
+      </nav>
+      <button
+        class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Learn
+        More
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <!-- TradingView Widget BEGIN -->
+  <div class="chart">
+    <div id="tradingview_24c54"></div>
+    <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/ETHUSDT/?exchange=BINANCE"
+        rel="noopener" target="_blank">
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+          new TradingView.widget(
+            {
+              "width": 800,
+              "height": 900,
+              "symbol": "BINANCE:ETHUSDT",
+              "interval": "5",
+              "timezone": "Asia/Kolkata",
+              "theme": "dark",
+              "style": "1",
+              "locale": "in",
+              "toolbar_bg": "#f1f3f6",
+              "enable_publishing": false,
+              "allow_symbol_change": true,
+              "studies": [
+                "TripleEMA@tv-basicstudies",
+                "MAVolumeWeighted@tv-basicstudies"
+              ],
+              "container_id": "tradingview_24c54"
+            }
+          );
+        </script>
+    </div>
+    <!-- TradingView Widget END -->
+    <a id="ot">ORDER_TYPE</a>
+    <a id="Status">STATUS</a>
+    <a id="pl">P/L(USDT)</a>
+    <a id="txt">SHORT</a>
+    <a id="l">___</a>
+    <a id="st">_____</a>
+    <button id="exit" style="color:red; background-color:aqua;" onclick="exit()">EXIT</button>
+    <button id="Back" style="color: cornflowerblue; background-color: chartreuse;"
+      onclick="location.href='papertrading.html'">BACK</button>
+    <script>
+      function exit() {
+        let exit = document.getElementById("st");
+        exit.innerText = "__CLOSED";
+      }
+    </script>
+    <script src="app_s.js"></script>
+</body>
